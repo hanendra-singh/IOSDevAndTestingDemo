@@ -1,0 +1,208 @@
+import Foundation
+
+var x = 2
+var Str = "test"
+
+var test1 : String = "hey"
+var test2 : Int = 12
+let test3 : Int = 10
+var isDone : Bool = true
+
+// Functions
+
+func myfirsyFunc() {
+    
+}
+
+func addTwoNumber(a: Int, b:Int) -> Int {
+    
+    return a+b
+}
+
+addTwoNumber(a: test2, b:test3)
+
+
+// Classes and Structs
+
+class Vehicle {
+    
+}
+
+class Car{
+    
+    var color = ""
+    var model = ""
+    
+
+    init(color:String, model:String){
+        self.color = color
+        self.model = model
+    }
+}
+
+var bmw = Car(color: "blue", model: "bmw")
+bmw.color
+var porche:Car = Car(color: "black", model: "porche")
+porche.model
+
+var car2 = bmw
+bmw.color = "new1"
+car2.color
+
+struct CarNew{
+    
+    var color = ""
+    var model = ""
+    
+
+    init(color:String, model:String){
+        self.color = color
+        self.model = model
+    }
+}
+
+var bmw1 = CarNew(color: "blue", model: "bmw")
+var car3 = bmw1
+bmw1.color = "new2"
+car3.color
+
+
+// Loops
+
+let num = [1,2,3,4,5]
+print("test")
+
+for x in num{
+    let result = x*2
+    print(result)
+}
+
+var i = 0;
+while i<3{
+    print("test")
+    i += 1
+}
+
+
+// Optionals and Wrappers
+
+var name: String? = "hanendra"
+name=nil
+
+var number1:Int? = 10
+var number2:Int? = 20
+
+if let value1 = number1{
+    
+    if let value2 = number2{
+        print(value1*value2)
+    }
+}
+
+// Conditionals
+ var condNumber = 18
+
+if condNumber>10 {
+    print("more then 10")
+} else {
+    print("less then 10")
+}
+
+
+// Gaurd Statement
+func numberLargerThennFive(number:Int) -> Bool{
+    if number<5{
+        return false
+    }
+    return true
+}
+
+func numberLargerThennFive1(number:Int) -> Bool{
+    guard number>5 else {return false }
+    return true
+}
+
+ // Enums & Switch statements
+
+enum States {
+    case Started
+    case InProgress
+    case Completed
+
+}
+
+var current : States?
+current = .Started
+
+func checkStates(){
+    
+    switch current {
+        
+    case .Started:
+        break
+    case .InProgress:
+        break;
+    case .none:
+        break
+    case .some(.Completed):
+        break
+    }
+}
+
+// Protocols - Similar to interface
+
+protocol CarProto {
+    var color : String {get set}
+    
+    func drive()
+    func drive1()
+}
+
+class CarP {
+
+    
+}
+
+class Bmw : CarP, CarProto {
+    var color: String
+    
+    init(color:String) {
+        self.color=color
+    }
+    
+    func drive() {
+        print("bmw drive1")
+    }
+    
+    func drive1() {
+        print("bmw drive2")
+    }
+    
+}
+
+// Strong and Weak - Memory management - [ similar to Garbage management in Java]
+
+class Child {
+    // weak var ballon
+}
+
+var child1 = Child()
+
+
+// Closures / lambda
+
+func isGreaterThenThree(number : Int) -> Bool{
+    if number > 3{
+        return true
+    }
+    return false
+}
+
+var myfunction: ((Int) -> Bool) = { number in
+    if number > 3{
+        return true
+    }
+    return false
+}
+
+
